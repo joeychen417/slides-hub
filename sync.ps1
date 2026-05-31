@@ -76,7 +76,7 @@ if ($syncedCount -gt 0) {
                 git commit -m "Auto-sync slides at $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
                 Write-Host "Pushing to remote GitHub..." -ForegroundColor Cyan
                 git push
-                Write-Host "Pushed successfully! Vercel build will trigger in background. OK" -ForegroundColor Green
+                Write-Host "Pushed successfully! Cloudflare Pages build will trigger in background. OK" -ForegroundColor Green
             }
         } else {
             Write-Host "No changes detected. Git repository is clean." -ForegroundColor Gray
