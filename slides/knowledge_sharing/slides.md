@@ -234,26 +234,3 @@ const targetUrl = ref('https://www.xuexi.cn/26d28f3e53f9533c50b9ddd94ae5d79a/a86
 （点击‘人民日报’）
 看，我们不需要切出窗口，不需要粘贴截图，直接在演示环境中调取最及时的原刊排版。这意味着，如果底层政策更新了，你的课件内容永远是‘最新版’，这就是高实时性的威力。
 -->
-
----
-layout: center
----
-<div class="enter-animation w-full max-w-5xl relative">
-  <!-- 返回按钮：指定跳回 Page 5 的第 5 个 click 状态 -->
-  <button @click="$slidev.nav.go(5, 5)" class="absolute -top-12 right-0 flex items-center gap-2 text-gray-400 hover:text-blue-500 transition-colors group">
-    <span class="text-sm font-bold uppercase tracking-widest">Back to Forge</span>
-    <div class="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center group-hover:border-blue-500">←</div>
-  </button>
-   <div class="bg-black rounded-3xl overflow-hidden shadow-[0_30px_80px_-15px_rgba(0,0,0,0.3)] border border-gray-800">
-    <!-- 提示：播完自动跳回 Page 5 的完成态 -->
-    <video 
-      controls 
-      @ended="$slidev.nav.go(5, 5)"
-      class="w-full aspect-video"
-      poster="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80"
-    >
-      <source src="/MOC-Obsidian.mp4" type="video/mp4">
-      您的浏览器不支持 HTML5 视频。
-    </video>
-  </div>
-</div>
