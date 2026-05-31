@@ -26,8 +26,16 @@ $courseFolders = Get-ChildItem -Path $obsidianOutputDir -Directory
 $syncedCount = 0
 
 foreach ($folder in $courseFolders) {
-    $outlineFile = Join-Path $folder.FullName "deck-outline.md"
-    if (Test-Path $outlineFile) {
+    # Find any markdown file ending with "slides.md" (e.g. course-id-slides.md or slides.md)
+    $slidesFiles = Get-ChildItem -Path $folder.FullName -Filter "*slides.md" -File
+    $srcFile = $null
+
+    if ($slidesFiles) {
+        # Use the first matched file
+        $srcFile = $slidesFiles[0].FullName
+    }
+
+    if ($srcFile) {
         $courseName = $folder.Name
         $targetCourseDir = Join-Path $hubSlidesDir $courseName
         $targetSlidesFile = Join-Path $targetCourseDir "slides.md"
@@ -39,16 +47,26 @@ foreach ($folder in $courseFolders) {
             New-Item -ItemType Directory -Force -Path $targetCourseDir | Out-Null
         }
 
-        # Copy slides.md
-        Copy-Item -Path $outlineFile -Destination $targetSlidesFile -Force
+        # Copy markdown source
+        Copy-Item -Path $srcFile -Destination $targetSlidesFile -Force
 
-        # Copy assets (images, public, assets, img)
-        $assetDirs = @("images", "public", "assets", "img")
+        # Copy assets and components directories
+        $assetDirs = @("images", "public", "assets", "img", "components")
         foreach ($assetName in $assetDirs) {
             $srcAsset = Join-Path $folder.FullName $assetName
             if (Test-Path $srcAsset) {
                 $destAsset = Join-Path $targetCourseDir $assetName
                 Copy-Item -Path $srcAsset -Destination $destAsset -Recurse -Force | Out-Null
+            }
+        }
+
+        # Copy style and config files
+        $extraFiles = @("style.css", "styles.css", "uno.config.js", "uno.config.ts")
+        foreach ($fileName in $extraFiles) {
+            $srcExtra = Join-Path $folder.FullName $fileName
+            if (Test-Path $srcExtra) {
+                $destExtra = Join-Path $targetCourseDir $fileName
+                Copy-Item -Path $srcExtra -Destination $destExtra -Force | Out-Null
             }
         }
 
