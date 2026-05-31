@@ -1,14 +1,14 @@
 # Slidev Multi-Course Hub Sync Script
-# This script scans Obsidian course folders, copies slide files to slidev-hub, and optionally pushes to GitHub.
+# This script scans Obsidian course folders, copies slide files to slides-hub, and optionally pushes to GitHub.
 
 $ErrorActionPreference = "Stop"
 
 # 1. Define Paths
 $obsidianOutputDir = "d:\AI\Joey\06output"
-$hubSlidesDir = "d:\AI\slidev-hub\slides"
+$hubSlidesDir = "d:\AI\slides-hub\slides"
 
 Write-Host "==========================================" -ForegroundColor Cyan
-Write-Host " Syncing Obsidian presentations to slidev-hub..." -ForegroundColor Cyan
+Write-Host " Syncing Obsidian presentations to slides-hub..." -ForegroundColor Cyan
 Write-Host "==========================================" -ForegroundColor Cyan
 
 if (-not (Test-Path $obsidianOutputDir)) {
@@ -82,6 +82,6 @@ if ($syncedCount -gt 0) {
             Write-Host "No changes detected. Git repository is clean." -ForegroundColor Gray
         }
     } else {
-        Write-Host "No Git repository found in slidev-hub directory. Skipping push." -ForegroundColor Gray
+        Write-Host "No Git repository found in slides-hub directory. Skipping push." -ForegroundColor Gray
     }
 }
