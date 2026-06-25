@@ -49,42 +49,42 @@ for (const course of courses) {
   console.log(`\n------------------------------------------`);
   console.log(`🛠 正在构建课件: ${course.id}...`);
   console.log(`------------------------------------------`);
-  
+
   const courseOutDir = path.join(distDir, course.id);
   const baseHref = `/${course.id}/`;
-  
+
   // 执行 slidev build
   const cmd = `npx slidev build "${course.path}" --out "${courseOutDir}" --base "${baseHref}"`;
   console.log(`运行指令: ${cmd}`);
-  
+
   try {
     execSync(cmd, { stdio: 'inherit' });
-    
+
     // 成功后，尝试提取标题和副标题作为门户展示
     const content = fs.readFileSync(course.path, 'utf-8');
     let title = course.id;
     let subtitle = '';
-    
+
     // 正则提取首个 H1（过滤掉注释）
     const cleanContent = content.replace(/<!--[\s\S]*?-->/g, '');
     const h1Match = cleanContent.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i) || cleanContent.match(/^#\s+(.+)$/m);
     if (h1Match) {
       title = h1Match[1].replace(/<[^>]+>/g, '').trim();
     }
-    
+
     // 正则提取首个 H2
     const h2Match = cleanContent.match(/<h2[^>]*>([\s\S]*?)<\/h2>/i) || cleanContent.match(/^##\s+(.+)$/m);
     if (h2Match) {
       subtitle = h2Match[1].replace(/<[^>]+>/g, '').trim();
     }
-    
+
     builtCourses.push({
       id: course.id,
       title: title,
       subtitle: subtitle || '点击进入播放演示',
       link: `./${course.id}/`
     });
-    
+
     console.log(`✅ 课件 [${course.id}] 构建成功！`);
   } catch (err) {
     console.error(`❌ 课件 [${course.id}] 构建失败:`, err.message);
@@ -616,7 +616,7 @@ const portalHtml = `
     </div>
     
     <div class="input-group" id="inputWrapper">
-      <input type="password" id="gateInput" placeholder="输入课件代码或管理密码..." autocomplete="off">
+      <input type="password" id="gateInput" placeholder="请输入课件代码..." autocomplete="off">
       <button id="toggleVisibleBtn" type="button" class="input-icon-btn" title="显示/隐藏输入内容">
         <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.52 13.52 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/></svg>
       </button>
@@ -625,7 +625,6 @@ const portalHtml = `
       </button>
     </div>
     <p id="errorMsg" class="error-message"></p>
-    <div class="tip-text">提示：输入课程ID（如 knowledge_sharing）直接访问，或输入密码解锁所有课件</div>
   </div>
 
   <!-- Admin Dashboard -->
