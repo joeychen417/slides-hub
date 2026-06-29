@@ -109,7 +109,6 @@ fonts:
 <!-- Slide 6: 使用体验 -->
 <div class="absolute inset-0" style="background: linear-gradient(to bottom right, #F7F9FC, #E9EEF5); z-index: -1;"></div>
 
-<div v-motion :initial="{ opacity: 0, y: 20 }" :enter="{ opacity: 1, y: 0, transition: { duration: 600 } }" class="absolute font-bold" style="left: 96px; top: 49px; font-size: 20px; color: #2E6BE6;">使用体验</div>
 
 <div v-motion :initial="{ opacity: 0, y: 30 }" :enter="{ opacity: 1, y: 0, transition: { duration: 600, delay: 100 } }" class="absolute font-bold" style="left: 95px; top: 103px; font-size: 40px; color: #232A33;">
   先看 <span style="color: #2E6BE6;">价值</span> ，再看全文。
@@ -245,7 +244,6 @@ fonts:
 <!-- Slide 7: 智能推荐 -->
 <div class="absolute inset-0" style="background: linear-gradient(to bottom right, #F7F9FC, #E9EAF6); z-index: -1;"></div>
 
-<div v-motion :initial="{ opacity: 0, y: 20 }" :enter="{ opacity: 1, y: 0, transition: { duration: 600 } }" class="absolute font-bold" style="left: 96px; top: 49px; font-size: 20px; color: #2E6BE6;">智能推荐</div>
 <div v-motion :initial="{ opacity: 0, y: 30 }" :enter="{ opacity: 1, y: 0, transition: { duration: 600, delay: 100 } }" class="absolute font-bold" style="left: 95px; top: 103px; font-size: 40px; color: #232A33;">
   <span style="color: #2E6BE6;">推荐理由</span> ，是 AI 与教学场景的 <span style="color: #2E6BE6;">连接点</span> 。
 </div>
@@ -328,7 +326,6 @@ body {
 
 <div class="absolute inset-0" style="background: linear-gradient(to bottom right, #F7F9FC, #E9EAF6); z-index: -1;"></div>
 
-<div v-motion :initial="{ opacity: 0, y: 20 }" :enter="{ opacity: 1, y: 0, transition: { duration: 600 } }" class="absolute font-bold" style="left: 96px; top: 49px; font-size: 20px; color: #2E6BE6;">语音与移动</div>
 <div v-motion :initial="{ opacity: 0, y: 30 }" :enter="{ opacity: 1, y: 0, transition: { duration: 600, delay: 100 } }" class="absolute font-bold" style="left: 95px; top: 103px; font-size: 40px; color: #232A33;">
   看不方便时， <span style="color: #2E6BE6;">也可以听</span> 。
 </div>
@@ -492,7 +489,6 @@ body {
 <!-- Slide 9: 信源采集 -->
 <div class="absolute inset-0" style="background: linear-gradient(to bottom right, #F7F9FC, #E9EAF6); z-index: -1;"></div>
 
-<div v-motion :initial="{ opacity: 0, y: 20 }" :enter="{ opacity: 1, y: 0, transition: { duration: 600 } }" class="absolute font-bold" style="left: 96px; top: 49px; font-size: 20px; color: #2E6BE6;">信源采集</div>
 <div v-motion :initial="{ opacity: 0, y: 30 }" :enter="{ opacity: 1, y: 0, transition: { duration: 600, delay: 100 } }" class="absolute font-bold" style="left: 95px; top: 103px; font-size: 40px; color: #232A33;">
   一套信源库，把好内容 <span style="color: #E0701F;">半自动</span> 收进来。
 </div>
@@ -577,7 +573,6 @@ body {
 <!-- Slide 10: 质量机制 -->
 <div class="absolute inset-0" style="background: linear-gradient(to bottom right, #F7F9FC, #E9EAF6); z-index: -1;"></div>
 
-<div v-motion :initial="{ opacity: 0, y: 20 }" :enter="{ opacity: 1, y: 0, transition: { duration: 600 } }" class="absolute font-bold" style="left: 96px; top: 49px; font-size: 20px; color: #2E6BE6;">质量机制</div>
 <div v-motion :initial="{ opacity: 0, y: 30 }" :enter="{ opacity: 1, y: 0, transition: { duration: 600, delay: 100 } }" class="absolute font-bold" style="left: 95px; top: 103px; font-size: 40px; color: #232A33;">
   智能可以 <span style="color: #2E6BE6;">提速</span> ，专业必须 <span style="color: #E0701F;">把关</span> 。
 </div>
@@ -615,7 +610,6 @@ body {
 <!-- Slide 11: 技术底座 -->
 <div class="absolute inset-0" style="background: linear-gradient(to bottom right, #F7F9FC, #E9EAF6); z-index: -1;"></div>
 
-<div v-motion :initial="{ opacity: 0, y: 20 }" :enter="{ opacity: 1, y: 0, transition: { duration: 600 } }" class="absolute font-bold" style="left: 96px; top: 49px; font-size: 20px; color: #2E6BE6;">技术底座</div>
 <div v-motion :initial="{ opacity: 0, y: 30 }" :enter="{ opacity: 1, y: 0, transition: { duration: 600, delay: 100 } }" class="absolute font-bold" style="left: 95px; top: 103px; font-size: 40px; color: #232A33;">
   小切口应用， <span style="color: #2E6BE6;">也要有可扩展底座</span> 。
 </div>
@@ -673,7 +667,6 @@ body {
 <!-- Slide 12: 变革创新性 -->
 <div class="absolute inset-0" style="background: linear-gradient(to bottom right, #F7F9FC, #E9EAF6); z-index: -1;"></div>
 
-<div v-motion :initial="{ opacity: 0, y: 20 }" :enter="{ opacity: 1, y: 0, transition: { duration: 600 } }" class="absolute font-bold" style="left: 96px; top: 49px; font-size: 20px; color: #2E6BE6;">评审回应</div>
 <div v-motion :initial="{ opacity: 0, y: 30 }" :enter="{ opacity: 1, y: 0, transition: { duration: 600, delay: 100 } }" class="absolute font-bold" style="left: 95px; top: 103px; font-size: 32px; color: #232A33;">变革创新性</div>
 
 <!-- 左柱 -->
@@ -715,7 +708,6 @@ body {
 <!-- Slide 13: 业技融合性 -->
 <div class="absolute inset-0" style="background: linear-gradient(to bottom right, #F7F9FC, #E9EAF6); z-index: -1;"></div>
 
-<div v-motion :initial="{ opacity: 0, y: 20 }" :enter="{ opacity: 1, y: 0, transition: { duration: 600 } }" class="absolute font-bold" style="left: 96px; top: 49px; font-size: 20px; color: #6E6AD6;">评审回应</div>
 <div v-motion :initial="{ opacity: 0, y: 30 }" :enter="{ opacity: 1, y: 0, transition: { duration: 600, delay: 100 } }" class="absolute font-bold" style="left: 95px; top: 103px; font-size: 32px; color: #232A33;">业技融合性</div>
 <div v-motion :initial="{ opacity: 0, y: 20 }" :enter="{ opacity: 1, y: 0, transition: { duration: 600, delay: 200 } }" class="absolute" style="left: 95px; top: 150px; font-size: 15px; color: #5A6675;">
   全程由业务需求驱动，技术解法精准匹配。
@@ -769,7 +761,6 @@ body {
 <!-- Slide 14: 落地实施性 -->
 <div class="absolute inset-0" style="background: linear-gradient(to bottom right, #F7F9FC, #E9EAF6); z-index: -1;"></div>
 
-<div v-motion :initial="{ opacity: 0, y: 20 }" :enter="{ opacity: 1, y: 0, transition: { duration: 600 } }" class="absolute font-bold" style="left: 96px; top: 49px; font-size: 20px; color: #7C5CE0;">评审回应</div>
 <div v-motion :initial="{ opacity: 0, y: 30 }" :enter="{ opacity: 1, y: 0, transition: { duration: 600, delay: 100 } }" class="absolute font-bold" style="left: 95px; top: 103px; font-size: 32px; color: #232A33;">落地实施性</div>
 <div v-motion :initial="{ opacity: 0, y: 20 }" :enter="{ opacity: 1, y: 0, transition: { duration: 600, delay: 200 } }" class="absolute" style="left: 95px; top: 150px; font-size: 20px; color: #5A6675;">
   平台已部署上线、内容每日更新、审核流程正常运转。
@@ -814,7 +805,6 @@ body {
 <!-- Slide 15: 自主安全性 -->
 <div class="absolute inset-0" style="background: linear-gradient(to bottom right, #F7F9FC, #E9EAF6); z-index: -1;"></div>
 
-<div v-motion :initial="{ opacity: 0, y: 20 }" :enter="{ opacity: 1, y: 0, transition: { duration: 600 } }" class="absolute font-bold" style="left: 96px; top: 49px; font-size: 20px; color: #F5752B;">评审回应</div>
 <div v-motion :initial="{ opacity: 0, y: 30 }" :enter="{ opacity: 1, y: 0, transition: { duration: 600, delay: 100 } }" class="absolute font-bold" style="left: 95px; top: 103px; font-size: 32px; color: #232A33;">自主安全性</div>
 <div v-motion :initial="{ opacity: 0, y: 20 }" :enter="{ opacity: 1, y: 0, transition: { duration: 600, delay: 200 } }" class="absolute" style="left: 95px; top: 150px; font-size: 15px; color: #5A6675;">
   在内容、数据、版权三个层面，保障平台的安全合规。
